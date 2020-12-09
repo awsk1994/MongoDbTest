@@ -1,19 +1,19 @@
-1:
+1: Find the restaurant ID of “Caffe Dante”.
 ```
 db.restaurants.findOne({name: "Caffe Dante"}, {restaurant_id: 1})
 ```
 
-2:
+2: Find all restaurants whose name has “Steak” in it, return only the restaurant’s ids and names.
 ```
 db.restaurants.find({name: /.*Steak.*/}, {restaurant_id: 1, name: 1})
 ```
 
-3:
+3: Find the names of all restaurants that serve either Italian or American cuisine and are located in the Brooklyn borough. (the result of cuisine is just "Italian" or "American")
 ```
 db.restaurants.find({cuisine: {$in: ["Italian", "American"]}, borough: "Brooklyn"}, {name: 1} )
 ```
 
-4:
+4: Return the list of boroughs ranked by the number of American restaurants (cuisine with the word "America") in it. That is, for each borough, find how many restaurants serve American cuisine an print the borough and the number of such restaurants sorted by this number in descending order.
 ```
 query = [
    {
@@ -44,7 +44,7 @@ query = [
 db.restaurants.aggregate(query)
 ```
 
-5:
+5: Find the top 5 Chinese restaurants (cuisine with the word "Chinese") in Manhattan that have the highest total score. Return for each restaurant the restaurants’ name and the total score. Hint: You can use “$unwind”.
 ```
 query = [
 	{
@@ -88,7 +88,7 @@ query = [
 db.restaurants.aggregate(query)
 ```
 
-6:
+6: Consider a rectangle area on the location field, in which the vertices are [ -74 , 40.5 ] , [ -74 , 40.7 ] , [ -73.5 , 40.5 ] and [ -73.5 , 40.7 ]. Find the number of restaurants in this area that have received a grade score (at least one) more than 70. Hint: Use the $geoWithin and $box.
 ```
 query = [
 	{
@@ -139,7 +139,7 @@ query = [
 db.restaurants.aggregate(query).toArray().length
 ```
 
-7:
+7: Find the  top 10 zipcodes with the largest population, return the zipcode, the city name and the state
 ```
 db.zips.aggregate([
     {"$sort": {"pop": -1}},
@@ -148,7 +148,7 @@ db.zips.aggregate([
 ]);
 ```
 
-8
+8: Find the largest city in each state, return the city name and the state
 ```
 db.zips.aggregate([
     {"$group": {
@@ -169,7 +169,7 @@ db.zips.aggregate([
 ]);
 ```
 
-9:
+9: Find the states where the average population of cities is larger than 10000, return the population and the state
 ```
 db.zips.aggregate([
     {"$group": {
@@ -192,7 +192,8 @@ db.zips.aggregate([
 ]);
 ```
 
-10:
+10: Find the top 5 cities nearest to  [-70,40], return only the city name. Hint: Use the $near.
+
 ```
 db.zips.createIndex({loc:"2dsphere"});
 db.zips.find(
