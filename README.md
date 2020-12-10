@@ -1,3 +1,15 @@
+# Intro
+
+ - Data is in data/*.json. Import them using below:
+```
+mongoimport --db test --collection restaurants --drop --file primer-dataset.json
+mongoimport --db test --collection zips --drop --file zips.json
+```
+
+ - main.js is the main file. It assumes port is 27017.
+
+# MongoDb shell query
+
 1: Find the restaurant ID of “Caffe Dante”.
 ```
 db.restaurants.findOne({name: "Caffe Dante"}, {restaurant_id: 1})
