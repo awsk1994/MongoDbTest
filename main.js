@@ -11,49 +11,47 @@ async function execute(){
 
   try {
     const db = client.db("test");
-    let collection = db.collection('restaurants');
-    let cursor = await q1(collection);
+    let query = await q1(db);
     console.log("q1:");
-    console.log(cursor);
+    console.log(query);
     
-    cursor = await q2(collection);
+    query = await q2(db);
     console.log("q2:");
-    console.log(cursor);
+    console.log(query);
 
-    cursor = await q3(collection);
+    query = await q3(db);
     console.log("q3:");
-    console.log(cursor);
+    console.log(query);
 
-    cursor = await q4(collection);
+    query = await q4(db);
     console.log("q4:");
-    console.log(cursor);
+    console.log(query);
 
-    cursor = await q5(collection);
+    query = await q5(db);
     console.log("q5:");
-    console.log(cursor);
+    console.log(query);
 
-    cursor = await q6(collection);
+    cursor = await q6(db);
     console.log("q6:");
     console.log(cursor);
 
-    collection = db.collection('zips');
-    cursor = await q7(collection);
+    cursor = await q7(db);
     console.log("q7:");
     console.log(cursor);
     
-    cursor = await q8(collection);
+    cursor = await q8(db);
     console.log("q8:");
     console.log(cursor);
 
-    cursor = await q9(collection);
+    cursor = await q9(db);
     console.log("q9:");
     console.log(cursor);
 
-    cursor = await q10(collection);
+    cursor = await q10(db);
     console.log("q10:");
     console.log(cursor);
   } catch (err) {
-      console.err(err);
+      console.error(err);
   } finally {
       client.close();
   }
@@ -61,21 +59,24 @@ async function execute(){
 execute()
 
 // Queries
-function q1(r){
-  return r.findOne({name: "Caffe Dante"}, {restaurant_id: 1});
+function q1(db){
+  let cursor = db.collection('restaurants').findOne({name: "Caffe Dante"}, {restaurant_id: 1});
+  return cursor;
 }
 
-function q2(r){
-  return r.find({name: /.*Steak.*/}, {projection: {_id: 0, restaurant_id: 1, name: 1}})
+function q2(db){
+  let cursor = db.collection('restaurants').find({name: /.*Steak.*/}, {projection: {_id: 0, restaurant_id: 1, name: 1}})
     .toArray();
+  return cursor;
 }
 
-function q3(r){
-  return r.find({cuisine: {$in: ["Italian", "American"]}, borough: "Brooklyn"}, {projection: {_id: 0, name: 1}})
+function q3(db){
+  let cursor = db.collection('restaurants').find({cuisine: {$in: ["Italian", "American"]}, borough: "Brooklyn"}, {projection: {_id: 0, name: 1}})
     .toArray();
+    return cursor;
 }
 
-function q4(r){
+function q4(db){
     let query = [
     {
         "$match" : {
@@ -102,10 +103,11 @@ function q4(r){
         }
     }];
 
-    return r.aggregate(query).toArray();
+    let cursor = db.collection('restaurants').aggregate(query).toArray();
+    return cursor;
 }
 
-function q5(r){
+function q5(db){
   let query = [
     {
       "$match" : {
@@ -144,10 +146,11 @@ function q5(r){
     {
       "$limit" : 5
     }];
-  return r.aggregate(query).toArray();
+    let cursor = db.collection('restaurants').aggregate(query).toArray();
+    return cursor;
 }
 
-function q6(r){
+function q6(db){
 let query = [
       {
           "$unwind" : "$grades"
@@ -194,19 +197,21 @@ let query = [
           }
       }
     ];
-  return r.aggregate(query).toArray();
+    let cursor = db.collection('restaurants').aggregate(query).toArray();
+    return cursor;
 }
 
-function q7(r){
+function q7(db){
     let query = [
         {"$sort": {"pop": -1}},
         {"$project": {_id: 1, city: 1, state: 1}},
         {"$limit": 10}
     ];
-    return r.aggregate(query).toArray();
+    let cursor = db.collection('zips').aggregate(query).toArray();
+    return cursor;
 }
 
-function q8(r, client){
+function q8(db){
     let query = [
         {"$group": {
             "_id": {"city": "$city", "state": "$state"},
@@ -224,10 +229,11 @@ function q8(r, client){
         },
         {"$project": {city: 1, state: 1, _id: 0}}
     ];
-    return r.aggregate(query).toArray();
+    let cursor = db.collection('zips').aggregate(query).toArray();
+    return cursor
 }
 
-function q9(r, client){
+function q9(db){
     let query = [
         {"$group": {
             "_id": {"city": "$city", "state": "$state"},
@@ -247,12 +253,13 @@ function q9(r, client){
             state: 1, totalPop: 1, _id: 0
         }}
     ];
-    return r.aggregate(query).toArray();
+    let cursor = db.collection('zips').aggregate(query).toArray();
+    return cursor;
 }
 
-function q10(r, client){
-    r.createIndex({loc:"2dsphere"});
-    return r.find({
+function q10(db){
+    db.collection('zips').createIndex({loc:"2dsphere"});
+    let cursor = db.collection('zips').find({
         loc:
           { $near :
              {
@@ -263,4 +270,5 @@ function q10(r, client){
       }, {projection: {_id: 0, city: 1}})
       .limit(5)
       .toArray();
+    return cursor;
 }

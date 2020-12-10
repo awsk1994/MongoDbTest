@@ -1,3 +1,4 @@
+q1:
 {
   _id: 5fd1377c4fd0b6cb3dd52997,
   address: {
@@ -17,6 +18,7 @@
   name: 'Caffe Dante',
   restaurant_id: '40373149'
 }
+q2:
 [
   { name: 'Peter Luger Steakhouse', restaurant_id: '40364335' },
   { name: "Donohue'S Steak House", restaurant_id: '40364572' },
@@ -147,21 +149,7 @@
   { name: '212 Steakhouse', restaurant_id: '50010711' },
   ... 9 more items
 ]
-[
-  { _id: 'Manhattan', totalCnt: 3400 },
-  { _id: 'Brooklyn', totalCnt: 1425 },
-  { _id: 'Queens', totalCnt: 1340 },
-  { _id: 'Bronx', totalCnt: 598 },
-  { _id: 'Staten Island', totalCnt: 260 },
-  { _id: 'Missing', totalCnt: 10 }
-]
-[
-  { city: 'NANTUCKET' },
-  { city: 'EDGARTOWN' },
-  { city: 'CHILMARK' },
-  { city: 'WEST TISBURY' },
-  { city: 'VINEYARD HAVEN' }
-]
+q3:
 [
   { name: 'Riviera Caterer' },
   { name: 'Regina Caterers' },
@@ -265,6 +253,16 @@
   { name: 'Heights Cafe' },
   ... 1365 more items
 ]
+q4:
+[
+  { _id: 'Manhattan', totalCnt: 3400 },
+  { _id: 'Brooklyn', totalCnt: 1425 },
+  { _id: 'Queens', totalCnt: 1340 },
+  { _id: 'Bronx', totalCnt: 598 },
+  { _id: 'Staten Island', totalCnt: 260 },
+  { _id: 'Missing', totalCnt: 10 }
+]
+q5:
 [
   {
     _id: 5fd1377d4fd0b6cb3dd543a2,
@@ -292,6 +290,17 @@
     name: 'Land Of Plenty'
   }
 ]
+q6:
+[
+  { _id: 5fd1377e4fd0b6cb3dd58655 },
+  { _id: 5fd1377d4fd0b6cb3dd53e98 },
+  { _id: 5fd1377d4fd0b6cb3dd53e2c },
+  { _id: 5fd1377d4fd0b6cb3dd53ec7 },
+  { _id: 5fd1377d4fd0b6cb3dd54003 },
+  { _id: 5fd1377d4fd0b6cb3dd55566 },
+  { _id: 5fd1377d4fd0b6cb3dd566e0 }
+]
+q7:
 [
   { _id: '60623', city: 'CHICAGO', state: 'IL' },
   { _id: '11226', city: 'BROOKLYN', state: 'NY' },
@@ -304,68 +313,16 @@
   { _id: '60628', city: 'CHICAGO', state: 'IL' },
   { _id: '90650', city: 'NORWALK', state: 'CA' }
 ]
-7
+q8:
 [
-  { state: 'MD', totalPop: 4781379 },
-  { state: 'TX', totalPop: 16984601 },
-  { state: 'MI', totalPop: 9295297 },
-  { state: 'NY', totalPop: 17990402 },
-  { state: 'AZ', totalPop: 3665228 },
-  { state: 'CT', totalPop: 3287116 },
-  { state: 'HI', totalPop: 1108229 },
-  { state: 'NJ', totalPop: 7730188 },
-  { state: 'MA', totalPop: 6016425 },
-  { state: 'DE', totalPop: 666168 },
-  { state: 'RI', totalPop: 1003218 },
-  { state: 'DC', totalPop: 606900 },
-  { state: 'LA', totalPop: 4217595 },
-  { state: 'WA', totalPop: 4866692 },
-  { state: 'GA', totalPop: 6478216 },
-  { state: 'OH', totalPop: 10846517 },
-  { state: 'FL', totalPop: 12686644 },
-  { state: 'NV', totalPop: 1201833 },
-  { state: 'CA', totalPop: 29754890 },
-  { state: 'SC', totalPop: 3486703 },
-  { state: 'NC', totalPop: 6628637 }
-]
-[
+  { city: 'NEWARK', state: 'NJ' },
+  { city: 'MINNEAPOLIS', state: 'MN' },
+  { city: 'WORCESTER', state: 'MA' },
+  { city: 'PHILADELPHIA', state: 'PA' },
+  { city: 'WICHITA', state: 'KS' },
+  { city: 'CRANSTON', state: 'RI' },
   { city: 'WASHINGTON', state: 'DC' },
   { city: 'MANCHESTER', state: 'NH' },
-  { city: 'BILLINGS', state: 'MT' },
-  { city: 'PORTLAND', state: 'ME' },
-  { city: 'NEW ORLEANS', state: 'LA' },
-  { city: 'GRAND FORKS', state: 'ND' },
-  { city: 'SEATTLE', state: 'WA' },
-  { city: 'BURLINGTON', state: 'VT' },
-  { city: 'ATLANTA', state: 'GA' },
-  { city: 'MIAMI', state: 'FL' },
-  { city: 'TULSA', state: 'OK' },
-  { city: 'CLEVELAND', state: 'OH' },
-  { city: 'LOS ANGELES', state: 'CA' },
-  { city: 'COLUMBIA', state: 'SC' },
-  { city: 'CHICAGO', state: 'IL' },
-  { city: 'SIOUX FALLS', state: 'SD' },
-  { city: 'MILWAUKEE', state: 'WI' },
-  { city: 'BALTIMORE', state: 'MD' },
-  { city: 'LAS VEGAS', state: 'NV' },
-  { city: 'CHARLOTTE', state: 'NC' },
-  { city: 'BIRMINGHAM', state: 'AL' },
-  { city: 'DES MOINES', state: 'IA' },
-  { city: 'DENVER', state: 'CO' },
-  { city: 'INDIANAPOLIS', state: 'IN' },
-  { city: 'HOUSTON', state: 'TX' },
-  { city: 'OMAHA', state: 'NE' },
-  { city: 'PHOENIX', state: 'AZ' },
-  { city: 'DETROIT', state: 'MI' },
-  { city: 'LOUISVILLE', state: 'KY' },
-  { city: 'SALT LAKE CITY', state: 'UT' },
-  { city: 'LITTLE ROCK', state: 'AR' },
-  { city: 'BOISE', state: 'ID' },
-  { city: 'BROOKLYN', state: 'NY' },
-  { city: 'BRIDGEPORT', state: 'CT' },
-  { city: 'ANCHORAGE', state: 'AK' },
-  { city: 'NEWARK', state: 'DE' },
-  { city: 'HUNTINGTON', state: 'WV' },
   { city: 'VIRGINIA BEACH', state: 'VA' },
   { city: 'SAINT LOUIS', state: 'MO' },
   { city: 'MEMPHIS', state: 'TN' },
@@ -373,11 +330,72 @@
   { city: 'ALBUQUERQUE', state: 'NM' },
   { city: 'HONOLULU', state: 'HI' },
   { city: 'JACKSON', state: 'MS' },
+  { city: 'BILLINGS', state: 'MT' },
+  { city: 'PORTLAND', state: 'ME' },
+  { city: 'LITTLE ROCK', state: 'AR' },
+  { city: 'BURLINGTON', state: 'VT' },
+  { city: 'BROOKLYN', state: 'NY' },
   { city: 'CHEYENNE', state: 'WY' },
-  { city: 'NEWARK', state: 'NJ' },
-  { city: 'MINNEAPOLIS', state: 'MN' },
-  { city: 'WORCESTER', state: 'MA' },
-  { city: 'PHILADELPHIA', state: 'PA' },
-  { city: 'WICHITA', state: 'KS' },
-  { city: 'CRANSTON', state: 'RI' }
+  { city: 'ANCHORAGE', state: 'AK' },
+  { city: 'DES MOINES', state: 'IA' },
+  { city: 'DENVER', state: 'CO' },
+  { city: 'INDIANAPOLIS', state: 'IN' },
+  { city: 'HOUSTON', state: 'TX' },
+  { city: 'PHOENIX', state: 'AZ' },
+  { city: 'DETROIT', state: 'MI' },
+  { city: 'OMAHA', state: 'NE' },
+  { city: 'LOUISVILLE', state: 'KY' },
+  { city: 'SALT LAKE CITY', state: 'UT' },
+  { city: 'MILWAUKEE', state: 'WI' },
+  { city: 'BOISE', state: 'ID' },
+  { city: 'BRIDGEPORT', state: 'CT' },
+  { city: 'BALTIMORE', state: 'MD' },
+  { city: 'LAS VEGAS', state: 'NV' },
+  { city: 'CHARLOTTE', state: 'NC' },
+  { city: 'BIRMINGHAM', state: 'AL' },
+  { city: 'COLUMBIA', state: 'SC' },
+  { city: 'NEWARK', state: 'DE' },
+  { city: 'CHICAGO', state: 'IL' },
+  { city: 'HUNTINGTON', state: 'WV' },
+  { city: 'SIOUX FALLS', state: 'SD' },
+  { city: 'ATLANTA', state: 'GA' },
+  { city: 'MIAMI', state: 'FL' },
+  { city: 'CLEVELAND', state: 'OH' },
+  { city: 'TULSA', state: 'OK' },
+  { city: 'LOS ANGELES', state: 'CA' },
+  { city: 'NEW ORLEANS', state: 'LA' },
+  { city: 'GRAND FORKS', state: 'ND' },
+  { city: 'SEATTLE', state: 'WA' }
+]
+q9:
+[
+  { state: 'TX', totalPop: 16984601 },
+  { state: 'MI', totalPop: 9295297 },
+  { state: 'CT', totalPop: 3287116 },
+  { state: 'NY', totalPop: 17990402 },
+  { state: 'AZ', totalPop: 3665228 },
+  { state: 'DE', totalPop: 666168 },
+  { state: 'NJ', totalPop: 7730188 },
+  { state: 'MA', totalPop: 6016425 },
+  { state: 'LA', totalPop: 4217595 },
+  { state: 'WA', totalPop: 4866692 },
+  { state: 'HI', totalPop: 1108229 },
+  { state: 'RI', totalPop: 1003218 },
+  { state: 'DC', totalPop: 606900 },
+  { state: 'CA', totalPop: 29754890 },
+  { state: 'GA', totalPop: 6478216 },
+  { state: 'OH', totalPop: 10846517 },
+  { state: 'FL', totalPop: 12686644 },
+  { state: 'SC', totalPop: 3486703 },
+  { state: 'MD', totalPop: 4781379 },
+  { state: 'NC', totalPop: 6628637 },
+  { state: 'NV', totalPop: 1201833 }
+]
+q10:
+[
+  { city: 'NANTUCKET' },
+  { city: 'EDGARTOWN' },
+  { city: 'CHILMARK' },
+  { city: 'WEST TISBURY' },
+  { city: 'VINEYARD HAVEN' }
 ]
