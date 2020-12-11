@@ -33,7 +33,7 @@ async function execute(){
 
     cursor = await q6(db);
     console.log("q6:");
-    console.log(cursor);
+    console.log(cursor.length);
 
     cursor = await q7(db);
     console.log("q7:");
@@ -151,7 +151,7 @@ function q5(db){
 }
 
 function q6(db){
-let query = [
+  let query = [
       {
           "$unwind" : "$grades"
       },
@@ -179,7 +179,7 @@ let query = [
                   },
                   {
                       "grades.score" : {
-                          "$gte" : 70
+                          "$gt" : 70
                       }
                   }
               ]
