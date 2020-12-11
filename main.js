@@ -250,7 +250,7 @@ function q9(db){
         },
         {"$match": {"avePop": {"$gt": 10000}}},
         {"$project": {
-            state: 1, totalPop: 1, _id: 0
+            state: 1, avePop: 1, _id: 0
         }}
     ];
     let cursor = db.collection('zips').aggregate(query).toArray();
